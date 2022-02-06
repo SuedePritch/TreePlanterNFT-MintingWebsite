@@ -1,0 +1,12 @@
+{
+    "name": "My Favorite Color is Black",
+    "description": "Favorite Color NFTs",
+    "image": "ipfs://QmT9YC1iG3jMLA1W2rYpvvNX2wXNN1sMCh4LoF2gyfjfNS/black.svg",
+    "edition": 1,
+    "attributes": [
+    {
+        "trait_type": "Color",
+        "value": "Black"
+    }
+    ]
+}
