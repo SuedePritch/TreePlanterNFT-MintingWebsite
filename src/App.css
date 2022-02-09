@@ -29,7 +29,6 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .mintForm{
   display: flex;
   justify-content: center;
@@ -60,7 +59,8 @@
 }
 
 .card{
-  width:24ch;
+  margin-top:1rem;
+  width: 22ch;
   color:black;
   font-size: 0.7rem;
 }
