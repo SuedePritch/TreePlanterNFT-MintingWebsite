@@ -1243,19 +1243,19 @@ abstract contract Ownable is Context {
 
 pragma solidity ^0.8.0;
 
-contract Color is ERC721Enumerable, Ownable {
+contract TreePlanter is ERC721Enumerable, Ownable {
     using Strings for uint256;
     string public baseURI;
     string public baseExtension = ".json";
-        uint256 public cost = 0.05 ether;
-    uint256 public maxSupply = 1000;
-    uint256 public maxMintAmount = 1;
+        uint256 public cost = 0.3 ether;
+    uint256 public maxSupply = 10000;
+    uint256 public maxMintAmount = 10;
     bool public paused = false;
 
-    constructor() ERC721("My Favorite Color", "MFC") {}
+    constructor() ERC721("KotF Tree Planters", "KotF") {}
         // internal
         function _baseURI() internal view virtual override returns (string memory) {
-        return "ipfs://QmNj6C8t4XR4quFiX9tgpkaHERxVaUDVTduTxqAXv2SYed/";
+        return "ipfs://QmYSoFMMh8aiZ2pby8xaSU3LDQe5cfjKRCJhGcAxYLWVgr/";
     }
         // public
 
@@ -1267,7 +1267,7 @@ contract Color is ERC721Enumerable, Ownable {
             require(supply + _mintAmount <= maxSupply);
             
             if (msg.sender != owner()) {
-            require(msg.value == cost * _mintAmount, "Need to send 0.05 ether!");
+            require(msg.value == cost * _mintAmount, "Need to send 0.3 ether!");
             }
             
             for (uint256 i = 1; i <= _mintAmount; i++) {

@@ -24,19 +24,30 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.mintForm{
+.title{
+  padding:2rem;
+  line-height: 0;
+}
+.mint{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.mintForm,
+.description{
+  margin:1.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 70vw;
-  padding:1.6rem;
-  background: linear-gradient(26deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%);
+  min-width: 250px;
+  max-width: 40vw;
+  padding:1rem;
+  background: linear-gradient(340deg, hsl(270, 100%, 20%) 0%,hsl(250, 72%, 30%) 60%, hsl(250, 72%, 30%) 100%);
   border-radius: 0.75rem;
 }
 .buttonSubmit{
@@ -69,4 +80,30 @@
 }
 .mintAmountInput{
   margin: 1rem 1rem;
+}
+
+
+
+.marketplaceContainer{
+  max-width: 100vw;
+  overflow: none;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+.ad{
+  font-size: 0.5rem;
+  width:200px;
+  text-align: center;
+  word-wrap: break-word;
+  padding:0.8rem;
+  border-radius: 0.25rem;
+
+}
+.adImage{
+  width:150px;
+  border-radius: 1rem;
+  
 }

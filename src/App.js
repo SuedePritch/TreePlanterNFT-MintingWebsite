@@ -1,6 +1,9 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Web3 from 'web3';
+import axios from 'axios';
+import React, { Component } from 'react';
+
 
 var account = null;
 var contract = null;
@@ -181,7 +184,7 @@ const ABI = [
 			},
 			{
 				"internalType": "bytes",
-				"name": "_data",
+				"name": "_images",
 				"type": "bytes"
 			}
 		],
@@ -627,7 +630,11 @@ const ABI = [
 		"type": "function"
 	}
 ]
-const ADDRESS = "0x2d0788ac611eBf7a291f8A4801D871465A91288F";
+
+const ADDRESS = "0x5cc287f6C1E14161bDDD50EAE75e08ce3F85B0a6";
+const apikey = "HT1EBNIUEB6FQIDWWNX6GVN37SEH9XIAVN";
+const endpoint = "https://api-rinkeby.etherscan.io/api"
+const nftpng = "https://ipfs.io/ipfs/QmcZAvFNFUxpBgTmy3PN6k53gcLLvh7FN4PNp551SmkLN4/"
 
 async function connectwallet() {
   if (window.ethereum) {
@@ -650,31 +657,81 @@ async function mint() {
   }
 }
 
+class App extends Component {
+	constructor() {
+		super();
+		this.state = {
+			balance: [],
+      nftdata:[],
+		};
+	}
 
+	async componentDidMount() {
+		
+		await axios.get((endpoint + `?module=stats&action=tokensupply&contractaddress=${ADDRESS}&apikey=${apikey}`))
+		.then(outputa => {
+            this.setState({
+                balance:outputa.data
+            })
+            console.log(outputa.data)
+        })
 
+		await axios.get((endpoint + `?module=account&action=tokennfttx&contractaddress=${ADDRESS}&page=1&offset=100&tag=latest&apikey=${apikey}`))
+		.then(outputb => {
+			const { result } = outputb.data
+            this.setState({
+                nftdata:result
+            })
+            console.log(outputb.data)
+        })
+	}
+  render() {
+	const {balance} = this.state;
+	const {nftdata} = this.state;
 
-function App() {
   return (
     <div className="App">
       <div className="App-header">
         <div className="title">
-          <h2>My Favourite Color</h2>
+        <p>King of the Forest presents</p>
+        <h3>Tree Planters</h3>
         </div>
-        
-          <form className="mintForm" onSubmit={handleSubmit}>
-              <button className="buttonSubmit" onClick={connectwallet} >Connect Wallet</button>
-            <div className="card" id="wallet-address">
-              <label htmlFor='floatingInput'>Wallet Address</label>
-            </div>
+        <div className="mint">
+            <form className="mintForm" onSubmit={handleSubmit}>
+                <button className="buttonSubmit" onClick={connectwallet} >Connect Wallet</button>
+              <div className="card" id="wallet-address">
+                <label htmlFor='floatingInput'>Wallet Address</label>
+              </div>
           
-            <div className="card">
-              <input type="number" name="amount" defaultValue="1" max="5"/>
+              <div className="card">
+                <input type="number" name="amount" defaultValue="1" max="10"/>
+              </div>
+                <button className="buttonSubmit" onClick={mint}>Mint</button>
+                <h4>Minted  <br/>{balance.result} of 10000</h4>
+            </form>
+            <div className='description'>
+              <p>Proceeds from the Tree Planters will be used to perform forest fire mitigation and tree planting activities.
+                Tree Planter NFT holders will recieve a NFT of a planted seedling.
+                The tokenized trees will measured on a regular basis and new NFTs will created and given to the current holders as the trees mature.
+                </p>
             </div>
-              <button className="buttonSubmit" onClick={mint}>Mint</button>
-          </form>
-      </div>
+        </div>
+
+          <div className="marketplaceContainer">
+            {nftdata.map(result => {
+            return (
+	            <div className="ad">
+                <img className="adImage" src={nftpng + result.tokenID +'.png'} alt="" />
+                  <h6 >Tree Planter #{result.tokenID}</h6>
+                  <p>{result.to}</p>
+              </div>
+                  );
+              })}
+
     </div>
+    </div></div>
   );
-}
+  };
+};
 
 export default App;
