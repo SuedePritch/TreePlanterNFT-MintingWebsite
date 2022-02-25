@@ -8,8 +8,9 @@ import React, { Component } from 'react';
 var account = null;
 var contract = null;
 function handleSubmit(event) {
-  event.preventDefault();
+	event.preventDefault();
 };
+
 
 const ABI = [
 	{
@@ -630,11 +631,11 @@ const ABI = [
 		"type": "function"
 	}
 ]
-
-const ADDRESS = "0x5cc287f6C1E14161bDDD50EAE75e08ce3F85B0a6";
-const apikey = "HT1EBNIUEB6FQIDWWNX6GVN37SEH9XIAVN";
+const { APIKEY } = require('./secrets.json');
+const apikey = APIKEY;
+const ADDRESS = "0x5cc287f6C1E14161bDDD50EAE75e08ce3F85B0a6"
 const endpoint = "https://api-rinkeby.etherscan.io/api"
-const nftpng = "https://ipfs.io/ipfs/QmcZAvFNFUxpBgTmy3PN6k53gcLLvh7FN4PNp551SmkLN4/"
+const IPFS = "https://ipfs.io/ipfs/QmcZAvFNFUxpBgTmy3PN6k53gcLLvh7FN4PNp551SmkLN4/"
 
 async function connectwallet() {
   if (window.ethereum) {
@@ -662,7 +663,7 @@ class App extends Component {
 		super();
 		this.state = {
 			balance: [],
-      nftdata:[],
+            nftdata:[],
 		};
 	}
 
@@ -685,53 +686,53 @@ class App extends Component {
             console.log(outputb.data)
         })
 	}
-  render() {
+    render() {
 	const {balance} = this.state;
 	const {nftdata} = this.state;
 
-  return (
+    return (
     <div className="App">
-      <div className="App-header">
+        <div className="App-header">
         <div className="title">
-        <p>King of the Forest presents</p>
-        <h3>Tree Planters</h3>
+        <h6>King of the Forest presents</h6>
+        <h1>Tree Planters</h1>
         </div>
         <div className="mint">
             <form className="mintForm" onSubmit={handleSubmit}>
                 <button className="buttonSubmit" onClick={connectwallet} >Connect Wallet</button>
-              <div className="card" id="wallet-address">
+                <div className="card" id="wallet-address">
                 <label htmlFor='floatingInput'>Wallet Address</label>
-              </div>
-          
-              <div className="card">
+                </div>
+            
+                <div className="card">
                 <input type="number" name="amount" defaultValue="1" max="10"/>
-              </div>
+                </div>
                 <button className="buttonSubmit" onClick={mint}>Mint</button>
                 <h4>Minted  <br/>{balance.result} of 10000</h4>
             </form>
             <div className='description'>
-              <p>Proceeds from the Tree Planters will be used to perform forest fire mitigation and tree planting activities.
+                <p>Proceeds from the Tree Planters will be used to perform forest fire mitigation and tree planting activities.
                 Tree Planter NFT holders will recieve a NFT of a planted seedling.
                 The tokenized trees will measured on a regular basis and new NFTs will created and given to the current holders as the trees mature.
                 </p>
             </div>
         </div>
 
-          <div className="marketplaceContainer">
+            <div className="marketplaceContainer">
             {nftdata.map(result => {
             return (
-	            <div className="ad">
-                <img className="adImage" src={nftpng + result.tokenID +'.png'} alt="" />
-                  <h6 >Tree Planter #{result.tokenID}</h6>
-                  <p>{result.to}</p>
-              </div>
-                  );
-              })}
+            <div className="ad">
+                <img className="adImage" src={IPFS + result.tokenID +'.png'} alt="" />
+                    <h6>Tree Planter #{result.tokenID}</h6>
+                    <p>{result.to}</p>
+                </div>
+                    );
+                })}
 
     </div>
     </div></div>
-  );
-  };
+    );
+    };
 };
 
 export default App;
