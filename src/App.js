@@ -696,6 +696,7 @@ class App extends Component {
         <div className="title">
         <h6>King of the Forest presents</h6>
         <h1>Tree Planters</h1>
+		<h6> </h6>
         </div>
         <div className="mint">
             <form className="mintForm" onSubmit={handleSubmit}>
@@ -707,7 +708,7 @@ class App extends Component {
                 <div className="card">
                 <input type="number" name="amount" defaultValue="1" max="10"/>
                 </div>
-                <button className="buttonSubmit" onClick={mint}>Mint</button>
+                <button className="buttonSubmit" onClick={mint}>Mint 0.2ETH</button>
                 <h4>Minted  <br/>{balance.result} of 10000</h4>
             </form>
             <div className='description'>
