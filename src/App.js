@@ -631,7 +631,7 @@ const ABI = [
 		"type": "function"
 	}
 ]
-const { APIKEY } = require('./secrets.json');
+// const { APIKEY } = require('./secrets.json');
 const apikey = APIKEY;
 const ADDRESS = "0x2BAD350AA80c70f187AdC2834F790EdfD99771EB"
 const endpoint = "https://api.etherscan.io/api"
