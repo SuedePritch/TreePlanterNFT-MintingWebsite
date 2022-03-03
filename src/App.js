@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Web3 from 'web3';
 import axios from 'axios';
 import React, { Component } from 'react';
-
+import env from 'react-dotenv';
 
 var account = null;
 var contract = null;
@@ -631,7 +631,7 @@ const ABI = [
 		"type": "function"
 	}
 ]
-// const { APIKEY } = require('./secrets.json');
+const { APIKEY } = env.APIKEY;
 const apikey = APIKEY;
 const ADDRESS = "0x2BAD350AA80c70f187AdC2834F790EdfD99771EB"
 const endpoint = "https://api.etherscan.io/api"
