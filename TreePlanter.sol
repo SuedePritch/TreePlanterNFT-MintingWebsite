@@ -1247,7 +1247,7 @@ contract TreePlanter is ERC721Enumerable, Ownable {
     using Strings for uint256;
     string public baseURI;
     string public baseExtension = ".json";
-        uint256 public cost = 0.3 ether;
+        uint256 public cost = 0.2 ether;
     uint256 public maxSupply = 10000;
     uint256 public maxMintAmount = 10;
     bool public paused = false;
@@ -1267,7 +1267,7 @@ contract TreePlanter is ERC721Enumerable, Ownable {
             require(supply + _mintAmount <= maxSupply);
             
             if (msg.sender != owner()) {
-            require(msg.value == cost * _mintAmount, "Need to send 0.3 ether!");
+            require(msg.value == cost * _mintAmount, "Need to send 0.2 ether!");
             }
             
             for (uint256 i = 1; i <= _mintAmount; i++) {

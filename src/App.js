@@ -633,8 +633,8 @@ const ABI = [
 ]
 const { APIKEY } = require('./secrets.json');
 const apikey = APIKEY;
-const ADDRESS = "0x5cc287f6C1E14161bDDD50EAE75e08ce3F85B0a6"
-const endpoint = "https://api-rinkeby.etherscan.io/api"
+const ADDRESS = "0x2BAD350AA80c70f187AdC2834F790EdfD99771EB"
+const endpoint = "https://api.etherscan.io/api"
 const IPFS = "https://ipfs.io/ipfs/QmcZAvFNFUxpBgTmy3PN6k53gcLLvh7FN4PNp551SmkLN4/"
 
 async function connectwallet() {
