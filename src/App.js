@@ -692,8 +692,11 @@ class App extends Component {
     return (
     <div className="App">
         <div className="App-header">
-        <div className="title">
-        <h6>King of the Forest presents<h1>Tree Planters</h1></h6>
+        <div className="header">
+		<div className='title'>
+			<p>King of the Forest presents</p>
+			<h1>Tree Planters</h1>
+		</div>
 		<img className='treeplanterGif' src="treeplantergif.gif" alt="treeplanter gif"/>
 		
 		</div>
@@ -721,15 +724,15 @@ class App extends Component {
         </div>
 		<div className='methodology'>
 			<div className='description'>
-				<p>
 					<h4>Forest Fire Mitigation</h4>					
-					Thinning of trees, vegetation, and brush. The removal of highly flammable vegetation and reduce vegetation density. Disposal of debris, such as pine needles, leaves, and dead limbs.
+				<p>
+					Thinning of trees, vegetation, and brush. The removal of highly flammable vegetation and reducing vegetation density. Disposal of debris, such as pine needles, leaves, and dead limbs.
 					KotF will utilize manual methods to reduce fuel load within the treated forests with emphasis on expediting decomposition.
 				</p>
 			</div>
 			<div className='description'>
-				<p>
 					<h4>Tree Planting</h4>					
+				<p>
 					Planting tree seedlings which have been grown in nurseries. The seedlings are typically 6 inches tall. Each of the seedlings will be methodically planted by skilled tree planters. 
 					The locations of the planted seedlings will be chosen for optimum microsites based on each tree species</p>
 			</div>

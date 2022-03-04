@@ -31,7 +31,7 @@ p{
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.title{
+.header{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -40,9 +40,14 @@ p{
   padding:2rem;
   line-height: 0.25rem;
 }
+.title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .treeplanterGif{
-  border-radius: 15%;
+  border-radius: 0.75rem;
   width:200px;
   height:200px;
 }
@@ -62,7 +67,7 @@ p{
   flex-direction: column;
   width: 25ch;
   padding:1rem;
-  background: linear-gradient(340deg, hsl(270, 100%, 20%) 0%,hsl(250, 72%, 30%) 60%, hsl(250, 72%, 30%) 100%);
+  background: linear-gradient(340deg, hsl(270, 96%, 27%) 0%,hsl(216, 64%, 44%) 80%, hsl(199, 93%, 48%) 100%);
   border-radius: 0.75rem;
 }
 .buttonSubmit{
