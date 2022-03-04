@@ -8,6 +8,9 @@ body{
   margin:0;
   padding:0;
 }
+p{
+  font-size: 0.8rem;
+}
 .App-logo {
   height: 50vmin;
   pointer-events: none;
@@ -37,24 +40,14 @@ body{
   padding:2rem;
   line-height: 0.25rem;
 }
-.profilepic,
-.profilepic2{
-  padding:1rem;
-  border-radius: 0.5rem;
-  width:200px;
-}
-.profile{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
+
 .treeplanterGif{
   border-radius: 15%;
   width:200px;
   height:200px;
 }
-.mint{
+.mint,
+.methodology{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -67,8 +60,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-width: 250px;
-  max-width: 40vw;
+  width: 25ch;
   padding:1rem;
   background: linear-gradient(340deg, hsl(270, 100%, 20%) 0%,hsl(250, 72%, 30%) 60%, hsl(250, 72%, 30%) 100%);
   border-radius: 0.75rem;

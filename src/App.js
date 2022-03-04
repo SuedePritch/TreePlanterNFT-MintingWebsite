@@ -694,10 +694,10 @@ class App extends Component {
         <div className="App-header">
         <div className="title">
         <h6>King of the Forest presents<h1>Tree Planters</h1></h6>
-		<img className='treeplanterGif' src="treeplanter.gif" alt="treeplanter gif"/>
-        </div>
-		<div><a href="https://etherscan.io/address/0x2BAD350AA80c70f187AdC2834F790EdfD99771EB">0x2BAD...71EB</a></div>
+		<img className='treeplanterGif' src="treeplantergif.gif" alt="treeplanter gif"/>
 		
+		</div>
+        <div>Contract Address <a href="https://etherscan.io/address/0x2BAD350AA80c70f187AdC2834F790EdfD99771EB">0x2BAD....71EB</a></div>
 		
         <div className="mint">
             <form className="mintForm" onSubmit={handleSubmit}>
@@ -719,7 +719,23 @@ class App extends Component {
                 </p>
             </div>
         </div>
-	
+		<div className='methodology'>
+			<div className='description'>
+				<p>
+					<h4>Forest Fire Mitigation</h4>					
+					Thinning of trees, vegetation, and brush. The removal of highly flammable vegetation and reduce vegetation density. Disposal of debris, such as pine needles, leaves, and dead limbs.
+					KotF will utilize manual methods to reduce fuel load within the treated forests with emphasis on expediting decomposition.
+				</p>
+			</div>
+			<div className='description'>
+				<p>
+					<h4>Tree Planting</h4>					
+					Planting tree seedlings which have been grown in nurseries. The seedlings are typically 6 inches tall. Each of the seedlings will be methodically planted by skilled tree planters. 
+					The locations of the planted seedlings will be chosen for optimum microsites based on each tree species</p>
+			</div>
+			
+		</div>
+
 
 
         <div className="marketplaceContainer">
