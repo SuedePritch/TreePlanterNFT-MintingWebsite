@@ -4,7 +4,6 @@ import Web3 from 'web3';
 import axios from 'axios';
 import React, { Component } from 'react';
 
-
 var account = null;
 var contract = null;
 function handleSubmit(event) {
@@ -694,10 +693,12 @@ class App extends Component {
     <div className="App">
         <div className="App-header">
         <div className="title">
-        <h6>King of the Forest presents</h6>
-        <h1>Tree Planters</h1>
-		<h6> </h6>
+        <h6>King of the Forest presents<h1>Tree Planters</h1></h6>
+		<img className='treeplanterGif' src="treeplanter.gif" alt="treeplanter gif"/>
         </div>
+		<div><a href="https://etherscan.io/address/0x2BAD350AA80c70f187AdC2834F790EdfD99771EB">0x2BAD...71EB</a></div>
+		
+		
         <div className="mint">
             <form className="mintForm" onSubmit={handleSubmit}>
                 <button className="buttonSubmit" onClick={connectwallet} >Connect Wallet</button>
@@ -718,8 +719,10 @@ class App extends Component {
                 </p>
             </div>
         </div>
+	
 
-            <div className="marketplaceContainer">
+
+        <div className="marketplaceContainer">
             {nftdata.map(result => {
             return (
             <div className="ad">
