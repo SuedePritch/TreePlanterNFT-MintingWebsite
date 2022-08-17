@@ -18,16 +18,16 @@ Contract Address [0x2BAD350AA80c70f187AdC2834F790EdfD99771EB](https://etherscan.
 
 This app is a website that allows users to mint my custom NFTs
   
+## Technology
 
+Solidity, Ganache, React, Ethers, Web3, Bootstrap, IPFS, Infura, OpenZeppelin
 ---
 
 ## Screenshots 
 
 ![](screenshot.png)
 
-## Technology
 
-Solidity, Ganache, React, Ethers, Web3, Bootstrap
 
 ## Contributing
 if you would like to become a collaberator on this project please feel free to look at the issues tab or send me an email.
